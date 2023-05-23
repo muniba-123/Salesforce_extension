@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Salesforce Extension Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/optionspage.css">
+</head>
+
+<body>
+    <div class="panel heading">
+        <img src="icons/icon48.png" width="48" height="48" alt="">
+        <h1>Settings</h1>
+    </div>
+    <div class="panel options-panel">
+        <table>
+            <tbody>
+                <tr class="category">
+                    <td>
+                        <label>Title for pipeline stage field placeholder</label>
+                        <input id="pipelineStage" type="text" placeholder="Pipeline stage" maxlength="22" />
+                    </td>
+                </tr>
+                <tr class="category">
+                    <td>
+                        <label>Default closed date should be </label>
+                        <input id="delayNumber" type="number" max="9" min="0" />
+                        <select id="delayType">
+                            <option value="month">Month</option>
+                            <option value="day">Day</option>
+                            <option value="week">Week</option>
+                        </select>
+                        <label>later</label>
+
+                    </td>
+                </tr>
+                <tr class="category">
+                    <td>
+                        <label>Last activity date should show date of recent</label>
+                        <select id="dateType">
+                            <option value="call">Call</option>
+                            <option value="email">Email</option>
+                            <option value="linkedIn">Linked message</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="category">
+                    <td>
+                        <label>Default opportunity name should be </label>
+                        <select id="oppName">
+                            <option value="c">Contact Name</option>
+                            <option value="ac">Account Name followed by Contact Name</option>
+                            <option value="ca">Contact Name followed by Account Name</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="category">
+                    <td>
+                        <label>Endpoint url</label>
+                        <input id="url" type="url" required />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div id="footer">
+            <button id="save-button" type="submit">Save</button>
+            <span id="status"></span>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="options.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "F5",
+  "options_page": "options.html",
+  "description": "F5 extension",
+  "version": "1.1",
+  "key":"MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCzEV5tnKpNvCy33irhyUTaOS58qq3gwCcDLYf81KhOi0QmwALmfhKEF4YXGyY6Uitv6omsebbRV/LBK2vfxKYsphcnGqrm7HPMstxC14TQHNdXshc8tPTlaPcG/oo4IYXIyuZV0vMn4Q4BxbnwdalKYWLgJSAwR+R+V06CAeEuJesDrPsYEfCQChNe2AIPkZALcoEnHy6JssONo8oj3NzsWM/NmKDw0L3m4mFGg1WCMvVyEDI3c3P7BrcJYRjQT3ahrtaAdX1c1lALQlHFIWKjcafaZmLT0qyg06kodtC6u7kY4MTINNGevYTOvm08kcQm98PoKLP1sSoVFG9rwq6bAgMBAAECggEAANmnGEp4oogvXCt2tP4Re3RvDJImON12B0qq4nVDW/rG9uTNfrkALywKFnJUuE0rPfZKngzb5IWQNlZARl6MKBpycgdAjXp3mElhyK12SM4CQGfXkBG54fGheUvcbc9276ZK+VhYOuBo18hPuDJkJzbBfe1J3at8Yb8vX72mNeO1J+StsdqIc/UPospeCF+naGHle3XIeIPH5NLHnqROGm/03MhZsnyK2kHZfLaubr0Nf7+IZzVoQ+vrkb+AJk5YFGJ9uH3HB7rdUWtEmcFXuWTakfb0XdpNxXjIxR/v3fM1r8JDVo63VYlWBoDJtGNfoBTqc/RVZTSeIOlWfl9dTQKBgQDtNZT4uXGGsyvADb522BwcGGJEm/vPb14JdT19zXiwzAlZOb7DdHmRbnmxJ2oMAmt5a7uWcGPxm2qxyIkz5ol4wMG8Dosa2Rhu7+5YS36i0hFNZ7MpEy5TMLWWA0QyQ+E6mB0DQUgQbOaa1uEdjObpw/tQIsR++3PnAi2sA/MJTwKBgQDBQLlTPjdnIN4cl3BZG3hgCZMopGyDMbVVXV1LlEsm/ZH+Q9+A7YpQbFA3it9Nip+pcAXHLr2ryXMHlUAwNpCcD+ZMO8FeZR0jGgXwIcoeglUAgrj8e2TmCCLP5SFZT/xjGu1cNQVAO5Jw41AuxSFzCUbhBiZaYO4k4kCES4ta9QKBgQDe8A70vIVADcC+naw2UeIJXbltthQx3v9IcFG8nJIjx3+5xhXN6PgggO4KW3rFkrijw2boevTTrDfYoxqgFrl5LeBm+FwwfX0DNqiRf1KjgD8WurGdlxNgyFTBioxbmYRi53fNCVvLZC5PtEia10Rmy/S0WhjHJ1jE8j0uf/+47QKBgGQ8tyO3TLNgN/Tqk+qUNg7SSJM3HdW6zcyWXdLa+1QhCD2zZNWR4EEwvTbiAEtPENuo8EZNNzJIjjKrtpyLYNyh3plCEV1t4vwW/md8j0Ld5Usbgunq8v3h0HS262JQ+59IEz/VfIDBpYaKUUfBFkV91VbYgsI0LrHQ7RfxuzmVAoGBAL+RAiMP0NKyW9g4vCptC7bo9qnItmXbgYaOttT0BBijdR+lWfFR9/ZwBZFxywoaIZEXCS8zEN3dJf//SgpHSZld23vT6PCS49MbTeC1PNQX5wXX8mRW3JyhjaXlQgGtTcw4lLL5cfu/b9XFFBS05eM/cpm6RDLG30KukA6wqev7",
+  "icons": {
+    "128": "icons/icon128.png",
+    "48": "icons/icon48.png",
+    "16": "icons/icon16.png"
+  },
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "identity",
+    "tabs",
+    "management",
+     "https://login.salesforce.com/*",
+      "http://login.salesforce.com/*",
+    "<all_urls>",
+    "http://*.salesforce.com/*",
+    "https://*.salesforce.com/*"
+  ],
+  "background": {
+    "scripts": ["jquery-2.1.3.min.js", "background.js","config.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icons/icon16.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["jquery-2.1.3.min.js","content.js","config.js"],
+      "css": ["css/style.css"]
+    }
+  ],
+   "web_accessible_resources":["icons/downarrow.svg","icons/loader.gif","icons/btn-loader.gif"]
+}
